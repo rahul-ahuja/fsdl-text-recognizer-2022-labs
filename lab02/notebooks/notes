@@ -1,0 +1,12 @@
+Notes:
+
+This combination is capable of expressing functions of arbitrary complexity, so long as those functions take in fixed-size arrays and return fixed-size arrays.
+
+If we use fully connected layers then this requirement of fixed size arrays holds. But if we use 1x1 conv layers instead then we can have variable sized input arrays. Is that correct? If so, why using fully connected layers anymore now?
+
+
+what's h5py? How is it used as distributed filesystem on a single machine?
+We only track and version metadata.
+
+How exactly is that being done? I see metadata.toml being created but i don't know how it is useful?
+
