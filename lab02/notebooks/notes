@@ -42,8 +42,8 @@ If you want to turn off the check, use --num_sanity_val_steps=0.
 
 Can this validation sanity check be seen as the testing of ML model?
 
-Q7.
 
+For the exercise, I overfitted the batches and applied higher dropout value. 
 
 
 
