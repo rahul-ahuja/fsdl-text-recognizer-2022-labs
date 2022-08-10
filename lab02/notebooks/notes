@@ -1,12 +1,39 @@
 Notes:
-
+Q1.
 This combination is capable of expressing functions of arbitrary complexity, so long as those functions take in fixed-size arrays and return fixed-size arrays.
 
 If we use fully connected layers then this requirement of fixed size arrays holds. But if we use 1x1 conv layers instead then we can have variable sized input arrays. Is that correct? If so, why using fully connected layers anymore now?
 
-
+Q2.
 what's h5py? How is it used as distributed filesystem on a single machine?
 We only track and version metadata.
 
 How exactly is that being done? I see metadata.toml being created but i don't know how it is useful?
+
+Q3.
+# for the Conv2D layers, it's more complicated
+ 
+def approx_conv_multiplications(kernel_shape, input_size=(64, 28, 28)):  # this is a rough and dirty approximation
+    num_kernel_elements = 1
+    for dimension in kernel_shape[-3:]:
+        num_kernel_elements *= dimension
+    num_input_channels, num_kernels = input_size[0], kernel_shape[0]
+    num_spatial_applications = ((input_size[1] - kernel_shape[-2] + 1) * (input_size[2] - kernel_shape[-1] + 1))
+    mutliplications_per_kernel = num_spatial_applications * num_kernel_elements * num_input_channels
+    return mutliplications_per_kernel * num_kernels
+
+What’s happening here?
+
+Q4.
+Depending on your compute hardware and the problem characteristics, either the MLP component or the convolutional component could become the critical bottleneck.
+When you're memory constrained, like when transferring a model "over the wire" to a browser, the MLP component is likely to be the bottleneck, whereas when you are compute-constrained, like when running a model on a low-power edge device or in an application with strict low-latency requirements, the convolutional component is likely to be the bottleneck.
+
+Can you explain this more?
+
+Q5.
+Convolutions reuse the same parameters over and over, so the total number of FLOPs done by the layer can be higher than that done by layers with more parameters -- much higher.
+
+What's FLOPS?
+
+
 
