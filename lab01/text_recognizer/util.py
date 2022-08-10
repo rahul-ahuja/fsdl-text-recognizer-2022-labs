@@ -1,4 +1,6 @@
 """Utility functions for text_recognizer module."""
+#import modules
+
 import base64
 import contextlib
 import hashlib
