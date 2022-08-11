@@ -39,6 +39,8 @@ Convolutions reuse the same parameters over and over, so the total number of FLO
 
 What's FLOPS?
 
+Ans5: Refer to Ans4
+
 Q6. 
 You may also see a quick message in the terminal referencing a "validation sanity check". PyTorch Lightning runs a few batches of validation data through the model before the first training epoch. This helps prevent training runs from crashing at the end of the first epoch, which is otherwise the first time validation loops are triggered and is sometimes hours into training, by crashing them quickly at the start.
 
@@ -46,7 +48,7 @@ If you want to turn off the check, use --num_sanity_val_steps=0.
 
 Can this validation sanity check be seen as the testing of ML model?
 
-Ans. Yes, but it is more for checking if the ML is overfitting or not???
+Ans6. Yes, but it is more for checking if the ML is overfitting or not???
 
 For the exercise, I overfitted the batches and applied higher dropout value. 
 
