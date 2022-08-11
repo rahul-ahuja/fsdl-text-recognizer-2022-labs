@@ -6,6 +6,8 @@ If we use fully connected layers then this requirement of fixed size arrays hold
 
 Q2.
 what's h5py? How is it used as distributed filesystem on a single machine?
+
+Q2.
 We only track and version metadata.
 
 How exactly is that being done? I see metadata.toml being created but i don't know how it is useful?
