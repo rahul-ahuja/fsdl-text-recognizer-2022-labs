@@ -32,6 +32,8 @@ When you're memory constrained, like when transferring a model "over the wire" t
 
 Can you explain this more?
 
+Ans4: MLP has more number of parameters so storage becomes bottleneck. Most of the computation takes place by Conv components so compute resources are critical. 
+
 Q5.
 Convolutions reuse the same parameters over and over, so the total number of FLOPs done by the layer can be higher than that done by layers with more parameters -- much higher.
 
