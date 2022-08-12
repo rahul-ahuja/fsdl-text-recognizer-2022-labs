@@ -1,3 +1,9 @@
+"""
+Callable datatype assigned to transform which is a function
+
+"""
+
+
 """Base Dataset class."""
 from typing import Any, Callable, Dict, Sequence, Tuple, Union
 
